@@ -25,6 +25,35 @@
             padding: 20px;
         }
         
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .lang-btn {
+            background: white;
+            border: none;
+            padding: 8px 16px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s;
+            color: #667eea;
+        }
+        
+        .lang-btn.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .lang-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
         header {
             text-align: center;
             color: white;
@@ -143,62 +172,154 @@
         .links a:hover {
             opacity: 0.8;
         }
+        
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
+    <div class="language-toggle">
+        <button class="lang-btn active" onclick="setLanguage('ko')">한글</button>
+        <button class="lang-btn" onclick="setLanguage('en')">English</button>
+    </div>
+    
     <div class="container">
-        <header>
-            <h1>Fairy</h1>
-            <p>당신만의 AI 요정 친구와 함께하는 감정 일기 앱</p>
-        </header>
-        
-        <div class="cta">
-            <a href="https://apps.apple.com/app/fairy" class="btn btn-primary">App Store에서 다운로드</a>
-            <a href="https://github.com/yourusername/fairy" class="btn btn-secondary">GitHub 저장소</a>
+        <!-- Korean Content -->
+        <div id="ko-content">
+            <header>
+                <h1>Fairy</h1>
+                <p>당신만의 AI 요정 친구와 함께하는 감정 일기 앱</p>
+            </header>
+            
+            <div class="cta">
+                <a href="https://apps.apple.com/app/fairy" class="btn btn-primary">App Store에서 다운로드</a>
+                <a href="https://github.com/yourusername/fairy" class="btn btn-secondary">GitHub 저장소</a>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>🧚 AI 요정</h3>
+                    <p>4가지 개성 있는 요정 캐릭터와 대화하며 감정을 나누세요</p>
+                </div>
+                <div class="feature">
+                    <h3>📔 감정 일기</h3>
+                    <p>하루의 감정을 기록하고 요정의 맞춤형 조언을 받으세요</p>
+                </div>
+                <div class="feature">
+                    <h3>🎯 퀘스트</h3>
+                    <p>감정 상태에 맞는 자기돌봄 활동을 추천받으세요</p>
+                </div>
+                <div class="feature">
+                    <h3>📊 통계</h3>
+                    <p>감정 건강 점수와 변화 추이를 한눈에 확인하세요</p>
+                </div>
+                <div class="feature">
+                    <h3>🎵 음악</h3>
+                    <p>당신의 감정에 맞는 명언과 음악을 추천받으세요</p>
+                </div>
+                <div class="feature">
+                    <h3>🔒 프라이버시</h3>
+                    <p>모든 데이터는 기기에만 저장되며 외부로 전송되지 않습니다</p>
+                </div>
+            </div>
+            
+            <div class="info">
+                <h2>Fairy에 대해</h2>
+                <p>Fairy는 단순한 일기장이 아닙니다. 당신의 감정을 이해하고, 함께 성장하는 AI 친구입니다.</p>
+                <p>매일 조금씩 자신을 돌보는 습관을 만들어보세요. Fairy가 당신의 감정 여정에 함께하겠습니다.</p>
+                <p><strong>프라이버시 우선:</strong> 모든 일기와 개인 데이터는 당신의 기기에만 저장됩니다. 외부 서버로 전송되지 않습니다.</p>
+            </div>
         </div>
         
-        <div class="features">
-            <div class="feature">
-                <h3>🧚 AI 요정</h3>
-                <p>4가지 개성 있는 요정 캐릭터와 대화하며 감정을 나누세요</p>
+        <!-- English Content -->
+        <div id="en-content" class="hidden">
+            <header>
+                <h1>Fairy</h1>
+                <p>Your AI Fairy Friend Diary App</p>
+            </header>
+            
+            <div class="cta">
+                <a href="https://apps.apple.com/app/fairy" class="btn btn-primary">Download on App Store</a>
+                <a href="https://github.com/yourusername/fairy" class="btn btn-secondary">GitHub Repository</a>
             </div>
-            <div class="feature">
-                <h3>📔 감정 일기</h3>
-                <p>하루의 감정을 기록하고 요정의 맞춤형 조언을 받으세요</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>🧚 AI Fairy</h3>
+                    <p>Chat with 4 unique fairy characters and share your emotions</p>
+                </div>
+                <div class="feature">
+                    <h3>📔 Emotion Diary</h3>
+                    <p>Record your daily emotions and receive personalized advice from your fairy</p>
+                </div>
+                <div class="feature">
+                    <h3>🎯 Quests</h3>
+                    <p>Get self-care activity recommendations based on your emotional state</p>
+                </div>
+                <div class="feature">
+                    <h3>📊 Statistics</h3>
+                    <p>Check your emotional health score and trends at a glance</p>
+                </div>
+                <div class="feature">
+                    <h3>🎵 Music</h3>
+                    <p>Receive personalized quotes and music recommendations for your mood</p>
+                </div>
+                <div class="feature">
+                    <h3>🔒 Privacy</h3>
+                    <p>All data is stored only on your device and never transmitted externally</p>
+                </div>
             </div>
-            <div class="feature">
-                <h3>🎯 퀘스트</h3>
-                <p>감정 상태에 맞는 자기돌봄 활동을 추천받으세요</p>
+            
+            <div class="info">
+                <h2>About Fairy</h2>
+                <p>Fairy is not just a diary app. It's an AI friend that understands your emotions and grows with you.</p>
+                <p>Build a habit of self-care every day. Fairy will be with you on your emotional journey.</p>
+                <p><strong>Privacy First:</strong> All your diary entries and personal data are stored only on your device. Nothing is transmitted to external servers.</p>
             </div>
-            <div class="feature">
-                <h3>📊 통계</h3>
-                <p>감정 건강 점수와 변화 추이를 한눈에 확인하세요</p>
-            </div>
-            <div class="feature">
-                <h3>🎵 음악</h3>
-                <p>당신의 감정에 맞는 명언과 음악을 추천받으세요</p>
-            </div>
-            <div class="feature">
-                <h3>🔒 프라이버시</h3>
-                <p>모든 데이터는 기기에만 저장되며 외부로 전송되지 않습니다</p>
-            </div>
-        </div>
-        
-        <div class="info">
-            <h2>Fairy에 대해</h2>
-            <p>Fairy는 단순한 일기장이 아닙니다. 당신의 감정을 이해하고, 함께 성장하는 AI 친구입니다.</p>
-            <p>매일 조금씩 자신을 돌보는 습관을 만들어보세요. Fairy가 당신의 감정 여정에 함께하겠습니다.</p>
-            <p><strong>프라이버시 우선:</strong> 모든 일기와 개인 데이터는 당신의 기기에만 저장됩니다. 외부 서버로 전송되지 않습니다.</p>
         </div>
         
         <footer>
             <div class="links">
-                <a href="https://github.com/yourusername/fairy/blob/main/PRIVACY.md">개인정보 처리방침</a>
+                <a href="https://github.com/yourusername/fairy/blob/main/PRIVACY.md">Privacy Policy</a>
                 <a href="https://github.com/yourusername/fairy">GitHub</a>
-                <a href="mailto:kbkkim2@naver.com">문의</a>
+                <a href="mailto:kbkkim2@naver.com">Contact</a>
             </div>
             <p>&copy; 2025 Fairy Development Team. All rights reserved.</p>
         </footer>
     </div>
+    
+    <script>
+        function setLanguage(lang) {
+            // Hide all content
+            document.getElementById('ko-content').classList.add('hidden');
+            document.getElementById('en-content').classList.add('hidden');
+            
+            // Show selected language
+            document.getElementById(lang + '-content').classList.remove('hidden');
+            
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Save preference
+            localStorage.setItem('language', lang);
+        }
+        
+        // Load saved language preference
+        window.addEventListener('load', function() {
+            const savedLang = localStorage.getItem('language') || 'ko';
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                if (btn.textContent === '한글' && savedLang === 'ko') {
+                    btn.click();
+                } else if (btn.textContent === 'English' && savedLang === 'en') {
+                    btn.click();
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지원 - Fairy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin: -40px -20px 40px -20px;
+            border-radius: 0 0 10px 10px;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .lang-btn {
+            background: white;
+            border: none;
+            padding: 8px 16px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #667eea;
+            transition: all 0.2s;
+        }
+        
+        .lang-btn.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #764ba2;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .faq {
+            background: #f0f4ff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .faq strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .contact-box {
+            background: #f0f4ff;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: center;
+            border: 2px solid #667eea;
+        }
+        
+        .contact-box h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        
+        .contact-box a {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 10px;
+            transition: all 0.2s;
+        }
+        
+        .contact-box a:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #999;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-toggle">
+        <button class="lang-btn active" onclick="setLanguage('ko')">한글</button>
+        <button class="lang-btn" onclick="setLanguage('en')">English</button>
+    </div>
+    
+    <!-- Korean Content -->
+    <div id="ko-content">
+        <header>
+            <h1>Fairy</h1>
+            <p>지원 및 문의</p>
+        </header>
+        
+        <div class="container">
+            <div class="content">
+                <h2>자주 묻는 질문 (FAQ)</h2>
+                
+                <div class="faq">
+                    <strong>Q: 내 일기 데이터는 안전한가요?</strong>
+                    <p>A: 네, 모든 일기 데이터는 당신의 기기에만 저장되며 외부 서버로 전송되지 않습니다. 완전히 안전합니다.</p>
+                </div>
+                
+                <div class="faq">
+                    <strong>Q: 앱을 삭제하면 데이터는 어떻게 되나요?</strong>
+                    <p>A: 앱을 삭제하면 모든 로컬 데이터가 함께 삭제됩니다. 백업을 원하시면 앱 내 백업 기능을 사용하세요.</p>
+                </div>
+                
+                <div class="faq">
+                    <strong>Q: 요정 캐릭터를 변경할 수 있나요?</strong>
+                    <p>A: 네, 언제든지 4가지 요정 캐릭터 중에서 선택할 수 있습니다. 홈 화면에서 캐릭터를 탭하면 변경할 수 있습니다.</p>
+                </div>
+                
+                <div class="faq">
+                    <strong>Q: 오프라인에서도 사용할 수 있나요?</strong>
+                    <p>A: 네, Fairy는 완전히 오프라인에서 작동합니다. 인터넷 연결이 필요하지 않습니다.</p>
+                </div>
+                
+                <div class="faq">
+                    <strong>Q: 앱이 느려요. 어떻게 해야 하나요?</strong>
+                    <p>A: 앱을 재시작하거나 기기를 재부팅해보세요. 문제가 지속되면 아래 연락처로 문의해주세요.</p>
+                </div>
+                
+                <h2>기술 지원</h2>
+                <p>앱 사용 중 문제가 발생하셨나요? 다음 방법으로 지원을 받을 수 있습니다:</p>
+                
+                <h3>1. 이메일 지원</h3>
+                <p>상세한 문제 설명과 함께 이메일을 보내주세요. 빠르게 답변해드리겠습니다.</p>
+                
+                <h3>2. 앱 내 피드백</h3>
+                <p>앱 설정에서 "피드백 보내기"를 통해 직접 의견을 전달할 수 있습니다.</p>
+                
+                <h2>개선 제안</h2>
+                <p>Fairy를 더 좋게 만들기 위한 제안이 있으신가요? 언제든지 연락주세요. 모든 의견을 소중히 여깁니다.</p>
+                
+                <div class="contact-box">
+                    <h3>문의하기</h3>
+                    <p>문제가 있거나 제안이 있으신가요?</p>
+                    <a href="mailto:kbkkim2@naver.com">이메일로 문의</a>
+                </div>
+                
+                <h2>버전 정보</h2>
+                <p><strong>현재 버전:</strong> 1.0.5</p>
+                <p><strong>마지막 업데이트:</strong> 2025년 11월 28일</p>
+                
+                <h2>감사의 말</h2>
+                <p>Fairy를 사용해주셔서 감사합니다. 여러분의 피드백과 지원이 앱을 더 좋게 만드는 원동력입니다.</p>
+            </div>
+            
+            <footer>
+                <p>&copy; 2025 Fairy Development Team. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+    
+    <!-- English Content -->
+    <div id="en-content" class="hidden">
+        <header>
+            <h1>Fairy</h1>
+            <p>Support & Contact</p>
+        </header>
+        
+        <div class="container">
+            <div class="content">
+                <h2>Frequently Asked Questions (FAQ)</h2>
+                
+                <div class="faq">
+                    <strong>Q: Is my diary data safe?</strong>
+                    <p>A: Yes, all diary data is stored only on your device and never transmitted to external servers. It's completely safe.</p>
+                </div>
+                
+                <div class="faq">
+                    <strong>Q: What happens to my data if I delete the app?</strong>
+                    <p>A: All local data will be deleted when you uninstall the app. Use the backup feature in the app if you want to save your data.</p>
+                </div>
+                
+                <div class="faq">
+                    <strong>Q: Can I change the fairy character?</strong>
+                    <p>A: Yes, you can choose from 4 different fairy characters anytime. Tap the character on the home screen to change it.</p>
+                </div>
+                
+                <div class="faq">
+                    <strong>Q: Can I use the app offline?</strong>
+                    <p>A: Yes, Fairy works completely offline. No internet connection is required.</p>
+                </div>
+                
+                <div class="faq">
+                    <strong>Q: The app is slow. What should I do?</strong>
+                    <p>A: Try restarting the app or rebooting your device. If the problem persists, please contact us using the information below.</p>
+                </div>
+                
+                <h2>Technical Support</h2>
+                <p>Having trouble with the app? You can get support in the following ways:</p>
+                
+                <h3>1. Email Support</h3>
+                <p>Send us an email with a detailed description of the issue. We'll respond quickly.</p>
+                
+                <h3>2. In-App Feedback</h3>
+                <p>You can send feedback directly through "Send Feedback" in the app settings.</p>
+                
+                <h2>Feature Suggestions</h2>
+                <p>Have a suggestion to make Fairy better? Feel free to contact us anytime. We value all feedback.</p>
+                
+                <div class="contact-box">
+                    <h3>Get in Touch</h3>
+                    <p>Have a problem or suggestion?</p>
+                    <a href="mailto:kbkkim2@naver.com">Contact via Email</a>
+                </div>
+                
+                <h2>Version Information</h2>
+                <p><strong>Current Version:</strong> 1.0.5</p>
+                <p><strong>Last Updated:</strong> November 28, 2025</p>
+                
+                <h2>Thank You</h2>
+                <p>Thank you for using Fairy. Your feedback and support help us make the app better.</p>
+            </div>
+            
+            <footer>
+                <p>&copy; 2025 Fairy Development Team. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+    
+    <script>
+        function setLanguage(lang) {
+            document.getElementById('ko-content').classList.add('hidden');
+            document.getElementById('en-content').classList.add('hidden');
+            document.getElementById(lang + '-content').classList.remove('hidden');
+            
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            localStorage.setItem('language', lang);
+        }
+        
+        window.addEventListener('load', function() {
+            const savedLang = localStorage.getItem('language') || 'ko';
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                if (btn.textContent === '한글' && savedLang === 'ko') {
+                    btn.click();
+                } else if (btn.textContent === 'English' && savedLang === 'en') {
+                    btn.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

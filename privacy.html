@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인정보 처리방침 - Fairy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin: -40px -20px 40px -20px;
+            border-radius: 0 0 10px 10px;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .lang-btn {
+            background: white;
+            border: none;
+            padding: 8px 16px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #667eea;
+            transition: all 0.2s;
+        }
+        
+        .lang-btn.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #764ba2;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        strong {
+            color: #667eea;
+        }
+        
+        .highlight {
+            background: #f0f4ff;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #999;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-toggle">
+        <button class="lang-btn active" onclick="setLanguage('ko')">한글</button>
+        <button class="lang-btn" onclick="setLanguage('en')">English</button>
+    </div>
+    
+    <!-- Korean Content -->
+    <div id="ko-content">
+        <header>
+            <h1>Fairy</h1>
+            <p>개인정보 처리방침</p>
+        </header>
+        
+        <div class="container">
+            <div class="content">
+                <p><strong>최종 수정일: 2025년 11월 28일</strong></p>
+                
+                <h2>1. 개요</h2>
+                <p>Fairy(이하 "앱")는 사용자의 개인정보 보호를 최우선으로 생각합니다. 본 개인정보 처리방침은 앱이 어떻게 정보를 수집, 사용, 보호하는지 설명합니다.</p>
+                
+                <h2>2. 수집하는 정보</h2>
+                
+                <h3>2.1 로컬 저장 데이터</h3>
+                <p>앱은 다음 정보를 <strong>사용자 기기에만 로컬로 저장</strong>합니다:</p>
+                <ul>
+                    <li>일기 내용</li>
+                    <li>감정 기록</li>
+                    <li>요정 캐릭터 선택</li>
+                    <li>퀘스트 진행 상황</li>
+                    <li>앱 설정</li>
+                </ul>
+                <p><strong>이 데이터는 외부 서버로 전송되지 않습니다.</strong></p>
+                
+                <h3>2.2 Google Analytics</h3>
+                <p>앱은 Google Analytics를 통해 다음의 <strong>익명화된 데이터</strong>를 수집합니다:</p>
+                <ul>
+                    <li>앱 사용 통계 (세션 수, 활성 사용자)</li>
+                    <li>기능 사용 현황</li>
+                    <li>앱 충돌 정보</li>
+                    <li>기기 정보 (OS 버전, 기기 모델)</li>
+                </ul>
+                <p><strong>개인을 식별할 수 있는 정보는 수집하지 않습니다.</strong></p>
+                
+                <h2>3. 정보 사용 목적</h2>
+                <p>수집된 정보는 다음 목적으로만 사용됩니다:</p>
+                <ul>
+                    <li>앱 성능 개선</li>
+                    <li>사용자 경험 향상</li>
+                    <li>버그 및 오류 해결</li>
+                    <li>기능 개발 우선순위 결정</li>
+                </ul>
+                
+                <h2>4. 정보 보호</h2>
+                
+                <h3>4.1 로컬 데이터</h3>
+                <ul>
+                    <li>모든 일기 및 개인 데이터는 사용자 기기에만 저장됩니다</li>
+                    <li>사용자가 앱을 삭제하면 모든 데이터가 삭제됩니다</li>
+                    <li>백업 기능을 사용하는 경우, 사용자가 암호화 여부를 선택할 수 있습니다</li>
+                </ul>
+                
+                <h3>4.2 Google Analytics 데이터</h3>
+                <ul>
+                    <li>Google의 보안 정책에 따라 보호됩니다</li>
+                    <li>익명화되어 개인을 식별할 수 없습니다</li>
+                </ul>
+                
+                <h2>5. 제3자 공유</h2>
+                <p>앱은 다음을 제외하고 개인정보를 제3자와 공유하지 않습니다:</p>
+                <ul>
+                    <li><strong>Google Analytics</strong>: 익명화된 사용 통계만 공유</li>
+                    <li>법적 요구사항이 있는 경우</li>
+                </ul>
+                
+                <h2>6. 사용자 권리</h2>
+                <p>사용자는 다음 권리를 가집니다:</p>
+                <ul>
+                    <li>앱 삭제를 통한 모든 로컬 데이터 삭제</li>
+                    <li>Google Analytics 추적 거부 (기기 설정에서 광고 ID 초기화)</li>
+                    <li>개인정보 처리에 대한 문의</li>
+                </ul>
+                
+                <h2>7. 문의</h2>
+                <p>개인정보 처리에 대한 문의는 다음으로 연락주세요:</p>
+                <ul>
+                    <li>이메일: <a href="mailto:kbkkim2@naver.com">kbkkim2@naver.com</a></li>
+                </ul>
+                
+                <h2>8. 정책 변경</h2>
+                <p>본 개인정보 처리방침은 예고 없이 변경될 수 있습니다. 변경 시 앱 내에서 공지합니다.</p>
+                
+                <div class="highlight">
+                    <strong>Fairy 개발팀</strong><br>
+                    프라이버시를 최우선으로 생각합니다.
+                </div>
+            </div>
+            
+            <footer>
+                <p>&copy; 2025 Fairy Development Team. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+    
+    <!-- English Content -->
+    <div id="en-content" class="hidden">
+        <header>
+            <h1>Fairy</h1>
+            <p>Privacy Policy</p>
+        </header>
+        
+        <div class="container">
+            <div class="content">
+                <p><strong>Last Updated: November 28, 2025</strong></p>
+                
+                <h2>1. Overview</h2>
+                <p>Fairy (hereinafter "App") prioritizes the protection of user privacy. This Privacy Policy explains how the App collects, uses, and protects information.</p>
+                
+                <h2>2. Information We Collect</h2>
+                
+                <h3>2.1 Local Storage Data</h3>
+                <p>The App stores the following information <strong>locally on the user's device only</strong>:</p>
+                <ul>
+                    <li>Diary entries</li>
+                    <li>Emotion records</li>
+                    <li>Fairy character selection</li>
+                    <li>Quest progress</li>
+                    <li>App settings</li>
+                </ul>
+                <p><strong>This data is never transmitted to external servers.</strong></p>
+                
+                <h3>2.2 Google Analytics</h3>
+                <p>The App collects the following <strong>anonymized data</strong> through Google Analytics:</p>
+                <ul>
+                    <li>App usage statistics (sessions, active users)</li>
+                    <li>Feature usage patterns</li>
+                    <li>App crash information</li>
+                    <li>Device information (OS version, device model)</li>
+                </ul>
+                <p><strong>No personally identifiable information is collected.</strong></p>
+                
+                <h2>3. How We Use Information</h2>
+                <p>Collected information is used solely for:</p>
+                <ul>
+                    <li>Improving app performance</li>
+                    <li>Enhancing user experience</li>
+                    <li>Fixing bugs and errors</li>
+                    <li>Prioritizing feature development</li>
+                </ul>
+                
+                <h2>4. Data Protection</h2>
+                
+                <h3>4.1 Local Data</h3>
+                <ul>
+                    <li>All diary and personal data are stored only on the user's device</li>
+                    <li>All data is deleted when the user uninstalls the app</li>
+                    <li>If backup features are used, users can choose encryption options</li>
+                </ul>
+                
+                <h3>4.2 Google Analytics Data</h3>
+                <ul>
+                    <li>Protected under Google's security policies</li>
+                    <li>Anonymized to prevent personal identification</li>
+                </ul>
+                
+                <h2>5. Third-Party Sharing</h2>
+                <p>The App does not share personal information with third parties except:</p>
+                <ul>
+                    <li><strong>Google Analytics</strong>: Only anonymized usage statistics</li>
+                    <li>When legally required</li>
+                </ul>
+                
+                <h2>6. User Rights</h2>
+                <p>Users have the right to:</p>
+                <ul>
+                    <li>Delete all local data by uninstalling the app</li>
+                    <li>Opt-out of Google Analytics tracking (reset advertising ID in device settings)</li>
+                    <li>Contact us regarding data processing</li>
+                </ul>
+                
+                <h2>7. Contact Us</h2>
+                <p>For inquiries about data processing, please contact:</p>
+                <ul>
+                    <li>Email: <a href="mailto:kbkkim2@naver.com">kbkkim2@naver.com</a></li>
+                </ul>
+                
+                <h2>8. Policy Changes</h2>
+                <p>This Privacy Policy may be updated without notice. Changes will be announced within the App.</p>
+                
+                <div class="highlight">
+                    <strong>Fairy Development Team</strong><br>
+                    Privacy is our top priority.
+                </div>
+            </div>
+            
+            <footer>
+                <p>&copy; 2025 Fairy Development Team. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+    
+    <script>
+        function setLanguage(lang) {
+            document.getElementById('ko-content').classList.add('hidden');
+            document.getElementById('en-content').classList.add('hidden');
+            document.getElementById(lang + '-content').classList.remove('hidden');
+            
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            localStorage.setItem('language', lang);
+        }
+        
+        window.addEventListener('load', function() {
+            const savedLang = localStorage.getItem('language') || 'ko';
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                if (btn.textContent === '한글' && savedLang === 'ko') {
+                    btn.click();
+                } else if (btn.textContent === 'English' && savedLang === 'en') {
+                    btn.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

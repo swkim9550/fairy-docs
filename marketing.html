@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fairy - AI 요정 친구 일기 앱</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .lang-btn {
+            background: white;
+            border: none;
+            padding: 8px 16px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #667eea;
+            transition: all 0.2s;
+        }
+        
+        .lang-btn.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            padding: 80px 20px;
+        }
+        
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-weight: 700;
+        }
+        
+        header p {
+            font-size: 1.4em;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+        
+        .cta {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 40px;
+            margin: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #667eea;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 60px 0;
+        }
+        
+        .feature {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 12px;
+            font-size: 1.4em;
+        }
+        
+        .feature p {
+            color: #666;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        
+        .info {
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            margin: 60px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .info h2 {
+            color: #667eea;
+            margin-bottom: 25px;
+            font-size: 2em;
+        }
+        
+        .info p {
+            margin-bottom: 18px;
+            color: #555;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .highlight {
+            background: #f0f4ff;
+            padding: 25px;
+            border-left: 5px solid #667eea;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            padding: 40px;
+            margin-top: 80px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-toggle">
+        <button class="lang-btn active" onclick="setLanguage('ko')">한글</button>
+        <button class="lang-btn" onclick="setLanguage('en')">English</button>
+    </div>
+    
+    <!-- Korean Content -->
+    <div id="ko-content">
+        <div class="container">
+            <header>
+                <h1>Fairy</h1>
+                <p>당신만의 AI 요정 친구와 함께하는 감정 일기 앱</p>
+                <p style="font-size: 1.1em; opacity: 0.85;">매일 조금씩 자신을 돌보는 습관을 만들어보세요</p>
+            </header>
+            
+            <div class="cta">
+                <a href="https://apps.apple.com/app/fairy" class="btn btn-primary">App Store에서 다운로드</a>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>🧚 AI 요정</h3>
+                    <p>4가지 개성 있는 요정 캐릭터와 대화하며 감정을 나누세요. 당신의 감정에 공감하고 응원하는 AI 친구입니다.</p>
+                </div>
+                <div class="feature">
+                    <h3>📔 감정 일기</h3>
+                    <p>하루의 감정을 기록하고 요정의 맞춤형 조언을 받으세요. 감정을 정리하고 성장하는 경험을 해보세요.</p>
+                </div>
+                <div class="feature">
+                    <h3>🎯 퀘스트</h3>
+                    <p>감정 상태에 맞는 자기돌봄 활동을 추천받으세요. 작은 습관부터 시작하는 성장의 여정입니다.</p>
+                </div>
+                <div class="feature">
+                    <h3>📊 통계</h3>
+                    <p>감정 건강 점수와 변화 추이를 한눈에 확인하세요. 당신의 감정 여정을 시각화합니다.</p>
+                </div>
+                <div class="feature">
+                    <h3>🎵 음악</h3>
+                    <p>당신의 감정에 맞는 명언과 음악을 추천받으세요. 위로와 영감을 얻는 특별한 경험입니다.</p>
+                </div>
+                <div class="feature">
+                    <h3>🔒 프라이버시</h3>
+                    <p>모든 데이터는 기기에만 저장되며 외부로 전송되지 않습니다. 당신의 비밀은 안전합니다.</p>
+                </div>
+            </div>
+            
+            <div class="info">
+                <h2>Fairy는 단순한 일기장이 아닙니다</h2>
+                <p>Fairy는 당신의 감정을 이해하고, 함께 성장하는 AI 친구입니다. 매일 조금씩 자신을 돌보는 습관을 만들어보세요.</p>
+                
+                <div class="highlight">
+                    <strong>프라이버시 우선</strong><br>
+                    모든 일기와 개인 데이터는 당신의 기기에만 저장됩니다. 외부 서버로 전송되지 않으므로 완전히 안전합니다.
+                </div>
+                
+                <h2 style="margin-top: 40px;">이런 분들께 추천합니다</h2>
+                <p>✓ 감정을 표현하고 정리하고 싶은 분</p>
+                <p>✓ 일상에서 작은 위로가 필요한 분</p>
+                <p>✓ 자기돌봄 습관을 만들고 싶은 분</p>
+                <p>✓ 감정 건강을 관리하고 싶은 분</p>
+                <p>✓ AI와 대화하며 성장하고 싶은 분</p>
+            </div>
+            
+            <footer>
+                <p>&copy; 2025 Fairy Development Team. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+    
+    <!-- English Content -->
+    <div id="en-content" class="hidden">
+        <div class="container">
+            <header>
+                <h1>Fairy</h1>
+                <p>Your AI Fairy Friend Diary App</p>
+                <p style="font-size: 1.1em; opacity: 0.85;">Build a habit of self-care every day</p>
+            </header>
+            
+            <div class="cta">
+                <a href="https://apps.apple.com/app/fairy" class="btn btn-primary">Download on App Store</a>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>🧚 AI Fairy</h3>
+                    <p>Chat with 4 unique fairy characters and share your emotions. Your AI friend who understands and supports you.</p>
+                </div>
+                <div class="feature">
+                    <h3>📔 Emotion Diary</h3>
+                    <p>Record your daily emotions and receive personalized advice. Experience organizing and growing through your feelings.</p>
+                </div>
+                <div class="feature">
+                    <h3>🎯 Quests</h3>
+                    <p>Get self-care activity recommendations based on your emotional state. A journey of growth starting with small habits.</p>
+                </div>
+                <div class="feature">
+                    <h3>📊 Statistics</h3>
+                    <p>Check your emotional health score and trends at a glance. Visualize your emotional journey.</p>
+                </div>
+                <div class="feature">
+                    <h3>🎵 Music</h3>
+                    <p>Receive personalized quotes and music recommendations for your mood. A special experience of comfort and inspiration.</p>
+                </div>
+                <div class="feature">
+                    <h3>🔒 Privacy</h3>
+                    <p>All data is stored only on your device and never transmitted externally. Your secrets are safe.</p>
+                </div>
+            </div>
+            
+            <div class="info">
+                <h2>Fairy is not just a diary app</h2>
+                <p>Fairy is an AI friend that understands your emotions and grows with you. Build a habit of self-care every day.</p>
+                
+                <div class="highlight">
+                    <strong>Privacy First</strong><br>
+                    All your diary entries and personal data are stored only on your device. Nothing is transmitted to external servers, so you're completely safe.
+                </div>
+                
+                <h2 style="margin-top: 40px;">Recommended for</h2>
+                <p>✓ Those who want to express and organize their emotions</p>
+                <p>✓ Those who need comfort in daily life</p>
+                <p>✓ Those who want to build self-care habits</p>
+                <p>✓ Those who want to manage emotional health</p>
+                <p>✓ Those who want to grow through conversations with AI</p>
+            </div>
+            
+            <footer>
+                <p>&copy; 2025 Fairy Development Team. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+    
+    <script>
+        function setLanguage(lang) {
+            document.getElementById('ko-content').classList.add('hidden');
+            document.getElementById('en-content').classList.add('hidden');
+            document.getElementById(lang + '-content').classList.remove('hidden');
+            
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            localStorage.setItem('language', lang);
+        }
+        
+        window.addEventListener('load', function() {
+            const savedLang = localStorage.getItem('language') || 'ko';
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                if (btn.textContent === '한글' && savedLang === 'ko') {
+                    btn.click();
+                } else if (btn.textContent === 'English' && savedLang === 'en') {
+                    btn.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
