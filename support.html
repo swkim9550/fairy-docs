@@ -166,6 +166,7 @@
     <div class="language-toggle">
         <button class="lang-btn active" onclick="setLanguage('ko')">한글</button>
         <button class="lang-btn" onclick="setLanguage('en')">English</button>
+        <button class="lang-btn" onclick="setLanguage('ja')">日本語</button>
     </div>
     
     <!-- Korean Content -->
@@ -228,6 +229,74 @@
                 
                 <h2>감사의 말</h2>
                 <p>Fairy를 사용해주셔서 감사합니다. 여러분의 피드백과 지원이 앱을 더 좋게 만드는 원동력입니다.</p>
+            </div>
+            
+            <footer>
+                <p>&copy; 2025 Fairy Development Team. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+    
+    <!-- Japanese Content -->
+    <div id="ja-content" class="hidden">
+        <header>
+            <h1>Fairy</h1>
+            <p>サポート・お問い合わせ</p>
+        </header>
+        
+        <div class="container">
+            <div class="content">
+                <h2>よくある質問（FAQ）</h2>
+                
+                <div class="faq">
+                    <strong>Q: 日記データは安全ですか？</strong>
+                    <p>A: はい、すべての日記データはあなたのデバイスにのみ保存され、外部サーバーに送信されることはありません。完全に安全です。</p>
+                </div>
+                
+                <div class="faq">
+                    <strong>Q: アプリを削除するとデータはどうなりますか？</strong>
+                    <p>A: アプリを削除すると、すべてのローカルデータも一緒に削除されます。バックアップが必要な場合は、アプリ内のバックアップ機能をご利用ください。</p>
+                </div>
+                
+                <div class="faq">
+                    <strong>Q: 妖精キャラクターを変更できますか？</strong>
+                    <p>A: はい、いつでも4つの妖精キャラクターから選択できます。ホーム画面でキャラクターをタップすると変更できます。</p>
+                </div>
+                
+                <div class="faq">
+                    <strong>Q: オフラインでも使用できますか？</strong>
+                    <p>A: はい、Fairyは完全にオフラインで動作します。インターネット接続は必要ありません。</p>
+                </div>
+                
+                <div class="faq">
+                    <strong>Q: アプリが遅いです。どうすればいいですか？</strong>
+                    <p>A: アプリを再起動するか、デバイスを再起動してみてください。問題が続く場合は、以下の連絡先までお問い合わせください。</p>
+                </div>
+                
+                <h2>技術サポート</h2>
+                <p>アプリの使用中に問題が発生しましたか？次の方法でサポートを受けることができます：</p>
+                
+                <h3>1. メールサポート</h3>
+                <p>詳細な問題の説明と共にメールをお送りください。迅速に対応いたします。</p>
+                
+                <h3>2. アプリ内フィードバック</h3>
+                <p>アプリの設定から「フィードバックを送信」を通じて直接ご意見をお伝えいただけます。</p>
+                
+                <h2>改善提案</h2>
+                <p>Fairyをより良くするための提案はありますか？いつでもご連絡ください。すべてのご意見を大切にしています。</p>
+                
+                <div class="contact-box">
+                    <h3>お問い合わせ</h3>
+                    <p>問題や提案がありますか？</p>
+                    <a href="mailto:kbkkim2@naver.com">メールでお問い合わせ</a>
+                </div>
+                
+                <h2>バージョン情報</h2>
+                <p><strong>現在のバージョン：</strong> 1.0.5</p>
+                <p><strong>最終更新：</strong> 2025年11月28日</p>
+                
+                <h2>感謝の言葉</h2>
+                <p>Fairyをご利用いただきありがとうございます。皆様のフィードバックとサポートがアプリをより良くする原動力です。</p>
             </div>
             
             <footer>
@@ -308,6 +377,7 @@
         function setLanguage(lang) {
             document.getElementById('ko-content').classList.add('hidden');
             document.getElementById('en-content').classList.add('hidden');
+            document.getElementById('ja-content').classList.add('hidden');
             document.getElementById(lang + '-content').classList.remove('hidden');
             
             document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -325,6 +395,8 @@
                 if (btn.textContent === '한글' && savedLang === 'ko') {
                     btn.click();
                 } else if (btn.textContent === 'English' && savedLang === 'en') {
+                    btn.click();
+                } else if (btn.textContent === '日本語' && savedLang === 'ja') {
                     btn.click();
                 }
             });

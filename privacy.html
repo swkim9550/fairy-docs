@@ -143,6 +143,7 @@
     <div class="language-toggle">
         <button class="lang-btn active" onclick="setLanguage('ko')">한글</button>
         <button class="lang-btn" onclick="setLanguage('en')">English</button>
+        <button class="lang-btn" onclick="setLanguage('ja')">日本語</button>
     </div>
     
     <!-- Korean Content -->
@@ -233,6 +234,103 @@
                 <div class="highlight">
                     <strong>Fairy 개발팀</strong><br>
                     프라이버시를 최우선으로 생각합니다.
+                </div>
+            </div>
+            
+            <footer>
+                <p>&copy; 2025 Fairy Development Team. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+    
+    <!-- Japanese Content -->
+    <div id="ja-content" class="hidden">
+        <header>
+            <h1>Fairy</h1>
+            <p>プライバシーポリシー</p>
+        </header>
+        
+        <div class="container">
+            <div class="content">
+                <p><strong>最終更新日：2025年11月28日</strong></p>
+                
+                <h2>1. 概要</h2>
+                <p>Fairy（以下「アプリ」）は、ユーザーのプライバシー保護を最優先に考えています。本プライバシーポリシーは、アプリがどのように情報を収集、使用、保護するかを説明します。</p>
+                
+                <h2>2. 収集する情報</h2>
+                
+                <h3>2.1 ローカル保存データ</h3>
+                <p>アプリは以下の情報を<strong>ユーザーのデバイスにのみローカルに保存</strong>します：</p>
+                <ul>
+                    <li>日記の内容</li>
+                    <li>感情記録</li>
+                    <li>妖精キャラクターの選択</li>
+                    <li>クエストの進行状況</li>
+                    <li>アプリの設定</li>
+                </ul>
+                <p><strong>このデータは外部サーバーに送信されることはありません。</strong></p>
+                
+                <h3>2.2 Google Analytics</h3>
+                <p>アプリはGoogle Analyticsを通じて以下の<strong>匿名化されたデータ</strong>を収集します：</p>
+                <ul>
+                    <li>アプリ使用統計（セッション数、アクティブユーザー）</li>
+                    <li>機能の使用状況</li>
+                    <li>アプリのクラッシュ情報</li>
+                    <li>デバイス情報（OSバージョン、デバイスモデル）</li>
+                </ul>
+                <p><strong>個人を特定できる情報は収集しません。</strong></p>
+                
+                <h2>3. 情報の使用目的</h2>
+                <p>収集された情報は以下の目的でのみ使用されます：</p>
+                <ul>
+                    <li>アプリのパフォーマンス向上</li>
+                    <li>ユーザー体験の改善</li>
+                    <li>バグとエラーの解決</li>
+                    <li>機能開発の優先順位決定</li>
+                </ul>
+                
+                <h2>4. 情報の保護</h2>
+                
+                <h3>4.1 ローカルデータ</h3>
+                <ul>
+                    <li>すべての日記と個人データはユーザーのデバイスにのみ保存されます</li>
+                    <li>ユーザーがアプリを削除すると、すべてのデータが削除されます</li>
+                    <li>バックアップ機能を使用する場合、ユーザーが暗号化の有無を選択できます</li>
+                </ul>
+                
+                <h3>4.2 Google Analyticsデータ</h3>
+                <ul>
+                    <li>Googleのセキュリティポリシーに従って保護されます</li>
+                    <li>匿名化されており、個人を特定することはできません</li>
+                </ul>
+                
+                <h2>5. 第三者への共有</h2>
+                <p>アプリは以下を除き、個人情報を第三者と共有しません：</p>
+                <ul>
+                    <li><strong>Google Analytics</strong>：匿名化された使用統計のみ共有</li>
+                    <li>法的要件がある場合</li>
+                </ul>
+                
+                <h2>6. ユーザーの権利</h2>
+                <p>ユーザーは以下の権利を有します：</p>
+                <ul>
+                    <li>アプリの削除によるすべてのローカルデータの削除</li>
+                    <li>Google Analyticsトラッキングの拒否（デバイス設定で広告IDをリセット）</li>
+                    <li>個人情報処理に関するお問い合わせ</li>
+                </ul>
+                
+                <h2>7. お問い合わせ</h2>
+                <p>個人情報処理に関するお問い合わせは以下までご連絡ください：</p>
+                <ul>
+                    <li>メール：<a href="mailto:kbkkim2@naver.com">kbkkim2@naver.com</a></li>
+                </ul>
+                
+                <h2>8. ポリシーの変更</h2>
+                <p>本プライバシーポリシーは予告なく変更される場合があります。変更時はアプリ内でお知らせします。</p>
+                
+                <div class="highlight">
+                    <strong>Fairy開発チーム</strong><br>
+                    プライバシーを最優先に考えています。
                 </div>
             </div>
             
@@ -343,6 +441,7 @@
         function setLanguage(lang) {
             document.getElementById('ko-content').classList.add('hidden');
             document.getElementById('en-content').classList.add('hidden');
+            document.getElementById('ja-content').classList.add('hidden');
             document.getElementById(lang + '-content').classList.remove('hidden');
             
             document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -360,6 +459,8 @@
                 if (btn.textContent === '한글' && savedLang === 'ko') {
                     btn.click();
                 } else if (btn.textContent === 'English' && savedLang === 'en') {
+                    btn.click();
+                } else if (btn.textContent === '日本語' && savedLang === 'ja') {
                     btn.click();
                 }
             });

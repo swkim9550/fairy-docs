@@ -173,6 +173,7 @@
     <div class="language-toggle">
         <button class="lang-btn active" onclick="setLanguage('ko')">한글</button>
         <button class="lang-btn" onclick="setLanguage('en')">English</button>
+        <button class="lang-btn" onclick="setLanguage('ja')">日本語</button>
     </div>
     
     <!-- Korean Content -->
@@ -230,6 +231,69 @@
                 <p>✓ 자기돌봄 습관을 만들고 싶은 분</p>
                 <p>✓ 감정 건강을 관리하고 싶은 분</p>
                 <p>✓ AI와 대화하며 성장하고 싶은 분</p>
+            </div>
+            
+            <footer>
+                <p>&copy; 2025 Fairy Development Team. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+    
+    <!-- Japanese Content -->
+    <div id="ja-content" class="hidden">
+        <div class="container">
+            <header>
+                <h1>Fairy</h1>
+                <p>あなただけのAI妖精と一緒に過ごす感情日記アプリ</p>
+                <p style="font-size: 1.1em; opacity: 0.85;">毎日少しずつ自分をケアする習慣を作りましょう</p>
+            </header>
+            
+            <div class="cta">
+                <a href="https://apps.apple.com/app/fairy" class="btn btn-primary">App Storeでダウンロード</a>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>🧚 AI妖精</h3>
+                    <p>4つの個性的な妖精キャラクターと会話しながら感情を共有しましょう。あなたの感情に共感し応援するAI友達です。</p>
+                </div>
+                <div class="feature">
+                    <h3>📔 感情日記</h3>
+                    <p>一日の感情を記録し、妖精からカスタマイズされたアドバイスを受け取りましょう。感情を整理し成長する経験をしてみてください。</p>
+                </div>
+                <div class="feature">
+                    <h3>🎯 クエスト</h3>
+                    <p>感情状態に合わせたセルフケア活動をおすすめします。小さな習慣から始まる成長の旅です。</p>
+                </div>
+                <div class="feature">
+                    <h3>📊 統計</h3>
+                    <p>感情健康スコアと変化の推移を一目で確認できます。あなたの感情の旅を可視化します。</p>
+                </div>
+                <div class="feature">
+                    <h3>🎵 音楽</h3>
+                    <p>あなたの感情に合った名言と音楽をおすすめします。癒しとインスピレーションを得る特別な体験です。</p>
+                </div>
+                <div class="feature">
+                    <h3>🔒 プライバシー</h3>
+                    <p>すべてのデータはデバイスにのみ保存され、外部に送信されません。あなたの秘密は安全です。</p>
+                </div>
+            </div>
+            
+            <div class="info">
+                <h2>Fairyは単なる日記帳ではありません</h2>
+                <p>Fairyはあなたの感情を理解し、一緒に成長するAI友達です。毎日少しずつ自分をケアする習慣を作りましょう。</p>
+                
+                <div class="highlight">
+                    <strong>プライバシー優先</strong><br>
+                    すべての日記と個人データはあなたのデバイスにのみ保存されます。外部サーバーに送信されることはないので完全に安全です。
+                </div>
+                
+                <h2 style="margin-top: 40px;">こんな方におすすめ</h2>
+                <p>✓ 感情を表現し整理したい方</p>
+                <p>✓ 日常で小さな癒しが必要な方</p>
+                <p>✓ セルフケアの習慣を作りたい方</p>
+                <p>✓ 感情の健康を管理したい方</p>
+                <p>✓ AIとの会話を通じて成長したい方</p>
             </div>
             
             <footer>
@@ -305,6 +369,7 @@
         function setLanguage(lang) {
             document.getElementById('ko-content').classList.add('hidden');
             document.getElementById('en-content').classList.add('hidden');
+            document.getElementById('ja-content').classList.add('hidden');
             document.getElementById(lang + '-content').classList.remove('hidden');
             
             document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -322,6 +387,8 @@
                 if (btn.textContent === '한글' && savedLang === 'ko') {
                     btn.click();
                 } else if (btn.textContent === 'English' && savedLang === 'en') {
+                    btn.click();
+                } else if (btn.textContent === '日本語' && savedLang === 'ja') {
                     btn.click();
                 }
             });
