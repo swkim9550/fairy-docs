@@ -4,463 +4,571 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>개인정보 처리방침 - Fairy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --primary: #6B5CE7;
+            --primary-light: #8B7CF7;
+            --bg-light: #FAFBFF;
+            --text-dark: #1A1A2E;
+            --text-gray: #6B7280;
+            --gradient-fairy: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
         }
-        
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.8;
-            color: #333;
-            background: #f8f9fa;
+            color: var(--text-dark);
+            background: var(--bg-light);
         }
-        
-        .container {
+
+        body.ja { font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif; }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(107, 92, 231, 0.1);
+            padding: 16px 0;
+        }
+
+        .nav-content {
             max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            margin: -40px -20px 40px -20px;
-            border-radius: 0 0 10px 10px;
-        }
-        
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        
-        header p {
-            opacity: 0.9;
-            font-size: 1.1em;
-        }
-        
-        .language-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-        
-        .lang-btn {
-            background: white;
-            border: none;
-            padding: 8px 16px;
-            margin: 0 5px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            color: #667eea;
-            transition: all 0.2s;
-        }
-        
-        .lang-btn.active {
-            background: #667eea;
-            color: white;
-        }
-        
-        .content {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        h2 {
-            color: #667eea;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 10px;
-        }
-        
-        h3 {
-            color: #764ba2;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-        
-        p {
-            margin-bottom: 15px;
-            color: #555;
-        }
-        
-        ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-        
-        li {
-            margin-bottom: 8px;
-            color: #555;
-        }
-        
-        strong {
-            color: #667eea;
-        }
-        
-        .highlight {
-            background: #f0f4ff;
-            padding: 20px;
-            border-left: 4px solid #667eea;
-            margin: 20px 0;
-            border-radius: 5px;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
-            color: #999;
-        }
-        
-        .hidden {
-            display: none;
-        }
-        
-        a {
-            color: #667eea;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             text-decoration: none;
         }
-        
+
+        .logo-icon {
+            width: 36px; height: 36px;
+            background: var(--gradient-fairy);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .logo-icon img {
+            width: 100%; height: 100%;
+        }
+
+        .logo-text {
+            font-size: 22px; font-weight: 700;
+            background: var(--gradient-fairy);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .lang-toggle {
+            display: flex;
+            background: var(--bg-light);
+            border-radius: 10px;
+            padding: 3px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-gray);
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 2px 8px rgba(107, 92, 231, 0.2);
+        }
+
+        /* Header */
+        .header {
+            background: var(--gradient-fairy);
+            padding: 120px 24px 60px;
+            text-align: center;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* Content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .content {
+            background: white;
+            border-radius: 20px;
+            padding: 48px;
+            margin-top: -40px;
+            margin-bottom: 60px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .last-updated {
+            display: inline-block;
+            background: rgba(107, 92, 231, 0.1);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 32px;
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 22px;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgba(107, 92, 231, 0.2);
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            color: var(--text-dark);
+            font-size: 17px;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            color: var(--text-gray);
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        li {
+            color: var(--text-gray);
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, rgba(107, 92, 231, 0.08) 0%, rgba(240, 147, 251, 0.08) 100%);
+            padding: 24px;
+            border-radius: 16px;
+            margin: 32px 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        .highlight strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
         a:hover {
             text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 24px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 13px;
+        }
+
+        .hidden { display: none !important; }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 28px; }
+            .content { padding: 32px 24px; }
+            h2 { font-size: 20px; }
+            .footer-links { flex-direction: column; gap: 16px; }
         }
     </style>
 </head>
 <body>
-    <div class="language-toggle">
-        <button class="lang-btn active" onclick="setLanguage('ko')">한글</button>
-        <button class="lang-btn" onclick="setLanguage('en')">English</button>
-        <button class="lang-btn" onclick="setLanguage('ja')">日本語</button>
-    </div>
-    
-    <!-- Korean Content -->
+    <nav>
+        <div class="nav-content">
+            <a href="marketing.html" class="logo">
+                <div class="logo-icon">
+                    <img src="images/app_icon.png" alt="Fairy">
+                </div>
+                <span class="logo-text">Fairy</span>
+            </a>
+            <div class="lang-toggle">
+                <button class="lang-btn active" onclick="setLanguage('ko')">한국어</button>
+                <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+                <button class="lang-btn" onclick="setLanguage('ja')">日本語</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Korean -->
     <div id="ko-content">
-        <header>
-            <h1>Fairy</h1>
-            <p>개인정보 처리방침</p>
-        </header>
-        
+        <div class="header">
+            <h1>개인정보 처리방침</h1>
+            <p>Fairy는 사용자의 프라이버시를 최우선으로 생각합니다</p>
+        </div>
         <div class="container">
             <div class="content">
-                <p><strong>최종 수정일: 2025년 11월 28일</strong></p>
-                
+                <span class="last-updated">최종 수정일: 2025년 12월 31일</span>
+
                 <h2>1. 개요</h2>
                 <p>Fairy(이하 "앱")는 사용자의 개인정보 보호를 최우선으로 생각합니다. 본 개인정보 처리방침은 앱이 어떻게 정보를 수집, 사용, 보호하는지 설명합니다.</p>
-                
+
+                <div class="highlight">
+                    <strong>🔒 핵심 원칙</strong>
+                    모든 일기와 개인 데이터는 사용자의 기기에만 저장됩니다. 외부 서버로 전송되지 않으므로 완전히 안전합니다.
+                </div>
+
                 <h2>2. 수집하는 정보</h2>
-                
+
                 <h3>2.1 로컬 저장 데이터</h3>
                 <p>앱은 다음 정보를 <strong>사용자 기기에만 로컬로 저장</strong>합니다:</p>
                 <ul>
-                    <li>일기 내용</li>
-                    <li>감정 기록</li>
-                    <li>요정 캐릭터 선택</li>
+                    <li>일기 내용 및 감정 기록</li>
+                    <li>요정 캐릭터 선택 및 설정</li>
                     <li>퀘스트 진행 상황</li>
-                    <li>앱 설정</li>
+                    <li>AI 생성 이미지 (요정의 미술관)</li>
+                    <li>타임캡슐 데이터</li>
+                    <li>앱 설정 및 테마</li>
                 </ul>
                 <p><strong>이 데이터는 외부 서버로 전송되지 않습니다.</strong></p>
-                
-                <h3>2.2 Google Analytics</h3>
-                <p>앱은 Google Analytics를 통해 다음의 <strong>익명화된 데이터</strong>를 수집합니다:</p>
+
+                <h3>2.2 요정의 미술관 (선택적)</h3>
+                <p>사용자가 자발적으로 작품을 전시하는 경우에만:</p>
+                <ul>
+                    <li>전시된 이미지 (Supabase 클라우드 저장)</li>
+                    <li>익명 닉네임</li>
+                    <li>좋아요 수</li>
+                </ul>
+                <p><strong>개인을 식별할 수 있는 정보는 저장되지 않습니다.</strong></p>
+
+                <h3>2.3 분석 데이터</h3>
+                <p>앱 개선을 위해 다음의 <strong>익명화된 데이터</strong>를 수집합니다:</p>
                 <ul>
                     <li>앱 사용 통계 (세션 수, 활성 사용자)</li>
                     <li>기능 사용 현황</li>
                     <li>앱 충돌 정보</li>
                     <li>기기 정보 (OS 버전, 기기 모델)</li>
                 </ul>
-                <p><strong>개인을 식별할 수 있는 정보는 수집하지 않습니다.</strong></p>
-                
+
                 <h2>3. 정보 사용 목적</h2>
-                <p>수집된 정보는 다음 목적으로만 사용됩니다:</p>
                 <ul>
-                    <li>앱 성능 개선</li>
+                    <li>앱 성능 개선 및 버그 수정</li>
                     <li>사용자 경험 향상</li>
-                    <li>버그 및 오류 해결</li>
                     <li>기능 개발 우선순위 결정</li>
                 </ul>
-                
+
                 <h2>4. 정보 보호</h2>
-                
-                <h3>4.1 로컬 데이터</h3>
                 <ul>
-                    <li>모든 일기 및 개인 데이터는 사용자 기기에만 저장됩니다</li>
-                    <li>사용자가 앱을 삭제하면 모든 데이터가 삭제됩니다</li>
-                    <li>백업 기능을 사용하는 경우, 사용자가 암호화 여부를 선택할 수 있습니다</li>
+                    <li>모든 일기 및 개인 데이터는 사용자 기기에만 저장</li>
+                    <li>앱 삭제 시 모든 로컬 데이터 삭제</li>
+                    <li>iCloud 백업 지원 (사용자 선택)</li>
                 </ul>
-                
-                <h3>4.2 Google Analytics 데이터</h3>
-                <ul>
-                    <li>Google의 보안 정책에 따라 보호됩니다</li>
-                    <li>익명화되어 개인을 식별할 수 없습니다</li>
-                </ul>
-                
-                <h2>5. 제3자 공유</h2>
-                <p>앱은 다음을 제외하고 개인정보를 제3자와 공유하지 않습니다:</p>
-                <ul>
-                    <li><strong>Google Analytics</strong>: 익명화된 사용 통계만 공유</li>
-                    <li>법적 요구사항이 있는 경우</li>
-                </ul>
-                
-                <h2>6. 사용자 권리</h2>
-                <p>사용자는 다음 권리를 가집니다:</p>
+
+                <h2>5. 사용자 권리</h2>
                 <ul>
                     <li>앱 삭제를 통한 모든 로컬 데이터 삭제</li>
-                    <li>Google Analytics 추적 거부 (기기 설정에서 광고 ID 초기화)</li>
+                    <li>전시된 작품 삭제 요청</li>
                     <li>개인정보 처리에 대한 문의</li>
                 </ul>
-                
-                <h2>7. 문의</h2>
-                <p>개인정보 처리에 대한 문의는 다음으로 연락주세요:</p>
+
+                <h2>6. 문의</h2>
+                <p>개인정보 처리에 대한 문의:</p>
                 <ul>
                     <li>이메일: <a href="mailto:kbkkim2@naver.com">kbkkim2@naver.com</a></li>
+                    <li>Instagram: <a href="https://www.instagram.com/fairy.daybook/">@fairy.daybook</a></li>
                 </ul>
-                
-                <h2>8. 정책 변경</h2>
-                <p>본 개인정보 처리방침은 예고 없이 변경될 수 있습니다. 변경 시 앱 내에서 공지합니다.</p>
-                
+
+                <h2>7. 정책 변경</h2>
+                <p>본 개인정보 처리방침은 예고 없이 변경될 수 있습니다. 중요한 변경 시 앱 내에서 공지합니다.</p>
+
                 <div class="highlight">
-                    <strong>Fairy 개발팀</strong><br>
+                    <strong>logboni</strong>
                     프라이버시를 최우선으로 생각합니다.
                 </div>
             </div>
-            
-            <footer>
-                <p>&copy; 2025 Fairy Development Team. All rights reserved.</p>
-            </footer>
         </div>
     </div>
-    
-    <!-- Japanese Content -->
-    <div id="ja-content" class="hidden">
-        <header>
-            <h1>Fairy</h1>
-            <p>プライバシーポリシー</p>
-        </header>
-        
-        <div class="container">
-            <div class="content">
-                <p><strong>最終更新日：2025年11月28日</strong></p>
-                
-                <h2>1. 概要</h2>
-                <p>Fairy（以下「アプリ」）は、ユーザーのプライバシー保護を最優先に考えています。本プライバシーポリシーは、アプリがどのように情報を収集、使用、保護するかを説明します。</p>
-                
-                <h2>2. 収集する情報</h2>
-                
-                <h3>2.1 ローカル保存データ</h3>
-                <p>アプリは以下の情報を<strong>ユーザーのデバイスにのみローカルに保存</strong>します：</p>
-                <ul>
-                    <li>日記の内容</li>
-                    <li>感情記録</li>
-                    <li>妖精キャラクターの選択</li>
-                    <li>クエストの進行状況</li>
-                    <li>アプリの設定</li>
-                </ul>
-                <p><strong>このデータは外部サーバーに送信されることはありません。</strong></p>
-                
-                <h3>2.2 Google Analytics</h3>
-                <p>アプリはGoogle Analyticsを通じて以下の<strong>匿名化されたデータ</strong>を収集します：</p>
-                <ul>
-                    <li>アプリ使用統計（セッション数、アクティブユーザー）</li>
-                    <li>機能の使用状況</li>
-                    <li>アプリのクラッシュ情報</li>
-                    <li>デバイス情報（OSバージョン、デバイスモデル）</li>
-                </ul>
-                <p><strong>個人を特定できる情報は収集しません。</strong></p>
-                
-                <h2>3. 情報の使用目的</h2>
-                <p>収集された情報は以下の目的でのみ使用されます：</p>
-                <ul>
-                    <li>アプリのパフォーマンス向上</li>
-                    <li>ユーザー体験の改善</li>
-                    <li>バグとエラーの解決</li>
-                    <li>機能開発の優先順位決定</li>
-                </ul>
-                
-                <h2>4. 情報の保護</h2>
-                
-                <h3>4.1 ローカルデータ</h3>
-                <ul>
-                    <li>すべての日記と個人データはユーザーのデバイスにのみ保存されます</li>
-                    <li>ユーザーがアプリを削除すると、すべてのデータが削除されます</li>
-                    <li>バックアップ機能を使用する場合、ユーザーが暗号化の有無を選択できます</li>
-                </ul>
-                
-                <h3>4.2 Google Analyticsデータ</h3>
-                <ul>
-                    <li>Googleのセキュリティポリシーに従って保護されます</li>
-                    <li>匿名化されており、個人を特定することはできません</li>
-                </ul>
-                
-                <h2>5. 第三者への共有</h2>
-                <p>アプリは以下を除き、個人情報を第三者と共有しません：</p>
-                <ul>
-                    <li><strong>Google Analytics</strong>：匿名化された使用統計のみ共有</li>
-                    <li>法的要件がある場合</li>
-                </ul>
-                
-                <h2>6. ユーザーの権利</h2>
-                <p>ユーザーは以下の権利を有します：</p>
-                <ul>
-                    <li>アプリの削除によるすべてのローカルデータの削除</li>
-                    <li>Google Analyticsトラッキングの拒否（デバイス設定で広告IDをリセット）</li>
-                    <li>個人情報処理に関するお問い合わせ</li>
-                </ul>
-                
-                <h2>7. お問い合わせ</h2>
-                <p>個人情報処理に関するお問い合わせは以下までご連絡ください：</p>
-                <ul>
-                    <li>メール：<a href="mailto:kbkkim2@naver.com">kbkkim2@naver.com</a></li>
-                </ul>
-                
-                <h2>8. ポリシーの変更</h2>
-                <p>本プライバシーポリシーは予告なく変更される場合があります。変更時はアプリ内でお知らせします。</p>
-                
-                <div class="highlight">
-                    <strong>Fairy開発チーム</strong><br>
-                    プライバシーを最優先に考えています。
-                </div>
-            </div>
-            
-            <footer>
-                <p>&copy; 2025 Fairy Development Team. All rights reserved.</p>
-            </footer>
-        </div>
-    </div>
-    
-    <!-- English Content -->
+
+    <!-- English -->
     <div id="en-content" class="hidden">
-        <header>
-            <h1>Fairy</h1>
-            <p>Privacy Policy</p>
-        </header>
-        
+        <div class="header">
+            <h1>Privacy Policy</h1>
+            <p>Fairy prioritizes your privacy above all else</p>
+        </div>
         <div class="container">
             <div class="content">
-                <p><strong>Last Updated: November 28, 2025</strong></p>
-                
+                <span class="last-updated">Last Updated: December 31, 2025</span>
+
                 <h2>1. Overview</h2>
                 <p>Fairy (hereinafter "App") prioritizes the protection of user privacy. This Privacy Policy explains how the App collects, uses, and protects information.</p>
-                
+
+                <div class="highlight">
+                    <strong>🔒 Core Principle</strong>
+                    All diary entries and personal data are stored only on your device. Nothing is transmitted to external servers.
+                </div>
+
                 <h2>2. Information We Collect</h2>
-                
+
                 <h3>2.1 Local Storage Data</h3>
-                <p>The App stores the following information <strong>locally on the user's device only</strong>:</p>
+                <p>The App stores the following information <strong>locally on your device only</strong>:</p>
                 <ul>
-                    <li>Diary entries</li>
-                    <li>Emotion records</li>
-                    <li>Fairy character selection</li>
+                    <li>Diary entries and emotion records</li>
+                    <li>Fairy character selection and settings</li>
                     <li>Quest progress</li>
-                    <li>App settings</li>
+                    <li>AI-generated images (Fairy Gallery)</li>
+                    <li>Time capsule data</li>
+                    <li>App settings and themes</li>
                 </ul>
                 <p><strong>This data is never transmitted to external servers.</strong></p>
-                
-                <h3>2.2 Google Analytics</h3>
-                <p>The App collects the following <strong>anonymized data</strong> through Google Analytics:</p>
+
+                <h3>2.2 Fairy Gallery (Optional)</h3>
+                <p>Only when you voluntarily exhibit artwork:</p>
+                <ul>
+                    <li>Exhibited images (stored on Supabase cloud)</li>
+                    <li>Anonymous nickname</li>
+                    <li>Like counts</li>
+                </ul>
+                <p><strong>No personally identifiable information is stored.</strong></p>
+
+                <h3>2.3 Analytics Data</h3>
+                <p>We collect the following <strong>anonymized data</strong> for app improvement:</p>
                 <ul>
                     <li>App usage statistics (sessions, active users)</li>
                     <li>Feature usage patterns</li>
                     <li>App crash information</li>
                     <li>Device information (OS version, device model)</li>
                 </ul>
-                <p><strong>No personally identifiable information is collected.</strong></p>
-                
+
                 <h2>3. How We Use Information</h2>
-                <p>Collected information is used solely for:</p>
                 <ul>
-                    <li>Improving app performance</li>
+                    <li>Improving app performance and fixing bugs</li>
                     <li>Enhancing user experience</li>
-                    <li>Fixing bugs and errors</li>
                     <li>Prioritizing feature development</li>
                 </ul>
-                
+
                 <h2>4. Data Protection</h2>
-                
-                <h3>4.1 Local Data</h3>
                 <ul>
-                    <li>All diary and personal data are stored only on the user's device</li>
-                    <li>All data is deleted when the user uninstalls the app</li>
-                    <li>If backup features are used, users can choose encryption options</li>
+                    <li>All diary and personal data stored only on your device</li>
+                    <li>All local data deleted when app is uninstalled</li>
+                    <li>iCloud backup supported (user's choice)</li>
                 </ul>
-                
-                <h3>4.2 Google Analytics Data</h3>
-                <ul>
-                    <li>Protected under Google's security policies</li>
-                    <li>Anonymized to prevent personal identification</li>
-                </ul>
-                
-                <h2>5. Third-Party Sharing</h2>
-                <p>The App does not share personal information with third parties except:</p>
-                <ul>
-                    <li><strong>Google Analytics</strong>: Only anonymized usage statistics</li>
-                    <li>When legally required</li>
-                </ul>
-                
-                <h2>6. User Rights</h2>
-                <p>Users have the right to:</p>
+
+                <h2>5. User Rights</h2>
                 <ul>
                     <li>Delete all local data by uninstalling the app</li>
-                    <li>Opt-out of Google Analytics tracking (reset advertising ID in device settings)</li>
+                    <li>Request deletion of exhibited artwork</li>
                     <li>Contact us regarding data processing</li>
                 </ul>
-                
-                <h2>7. Contact Us</h2>
-                <p>For inquiries about data processing, please contact:</p>
+
+                <h2>6. Contact Us</h2>
+                <p>For inquiries about data processing:</p>
                 <ul>
                     <li>Email: <a href="mailto:kbkkim2@naver.com">kbkkim2@naver.com</a></li>
+                    <li>Instagram: <a href="https://www.instagram.com/fairy.daybook/">@fairy.daybook</a></li>
                 </ul>
-                
-                <h2>8. Policy Changes</h2>
-                <p>This Privacy Policy may be updated without notice. Changes will be announced within the App.</p>
-                
+
+                <h2>7. Policy Changes</h2>
+                <p>This Privacy Policy may be updated without notice. Significant changes will be announced within the App.</p>
+
                 <div class="highlight">
-                    <strong>Fairy Development Team</strong><br>
+                    <strong>logboni</strong>
                     Privacy is our top priority.
                 </div>
             </div>
-            
-            <footer>
-                <p>&copy; 2025 Fairy Development Team. All rights reserved.</p>
-            </footer>
         </div>
     </div>
-    
+
+    <!-- Japanese -->
+    <div id="ja-content" class="hidden">
+        <div class="header">
+            <h1>プライバシーポリシー</h1>
+            <p>Fairyはユーザーのプライバシーを最優先に考えています</p>
+        </div>
+        <div class="container">
+            <div class="content">
+                <span class="last-updated">最終更新日：2025年12月31日</span>
+
+                <h2>1. 概要</h2>
+                <p>Fairy（以下「アプリ」）は、ユーザーのプライバシー保護を最優先に考えています。本プライバシーポリシーは、アプリがどのように情報を収集、使用、保護するかを説明します。</p>
+
+                <div class="highlight">
+                    <strong>🔒 基本原則</strong>
+                    すべての日記と個人データはユーザーのデバイスにのみ保存されます。外部サーバーに送信されることはありません。
+                </div>
+
+                <h2>2. 収集する情報</h2>
+
+                <h3>2.1 ローカル保存データ</h3>
+                <p>アプリは以下の情報を<strong>ユーザーのデバイスにのみローカルに保存</strong>します：</p>
+                <ul>
+                    <li>日記の内容と感情記録</li>
+                    <li>妖精キャラクターの選択と設定</li>
+                    <li>クエストの進行状況</li>
+                    <li>AI生成画像（妖精の美術館）</li>
+                    <li>タイムカプセルデータ</li>
+                    <li>アプリの設定とテーマ</li>
+                </ul>
+                <p><strong>このデータは外部サーバーに送信されることはありません。</strong></p>
+
+                <h3>2.2 妖精の美術館（任意）</h3>
+                <p>ユーザーが自発的に作品を展示する場合のみ：</p>
+                <ul>
+                    <li>展示された画像（Supabaseクラウドに保存）</li>
+                    <li>匿名ニックネーム</li>
+                    <li>いいね数</li>
+                </ul>
+                <p><strong>個人を特定できる情報は保存されません。</strong></p>
+
+                <h3>2.3 分析データ</h3>
+                <p>アプリ改善のために以下の<strong>匿名化されたデータ</strong>を収集します：</p>
+                <ul>
+                    <li>アプリ使用統計（セッション数、アクティブユーザー）</li>
+                    <li>機能の使用状況</li>
+                    <li>アプリのクラッシュ情報</li>
+                    <li>デバイス情報（OSバージョン、デバイスモデル）</li>
+                </ul>
+
+                <h2>3. 情報の使用目的</h2>
+                <ul>
+                    <li>アプリのパフォーマンス向上とバグ修正</li>
+                    <li>ユーザー体験の改善</li>
+                    <li>機能開発の優先順位決定</li>
+                </ul>
+
+                <h2>4. 情報の保護</h2>
+                <ul>
+                    <li>すべての日記と個人データはユーザーのデバイスにのみ保存</li>
+                    <li>アプリ削除時にすべてのローカルデータを削除</li>
+                    <li>iCloudバックアップ対応（ユーザーの選択）</li>
+                </ul>
+
+                <h2>5. ユーザーの権利</h2>
+                <ul>
+                    <li>アプリの削除によるすべてのローカルデータの削除</li>
+                    <li>展示された作品の削除リクエスト</li>
+                    <li>個人情報処理に関するお問い合わせ</li>
+                </ul>
+
+                <h2>6. お問い合わせ</h2>
+                <p>個人情報処理に関するお問い合わせ：</p>
+                <ul>
+                    <li>メール：<a href="mailto:kbkkim2@naver.com">kbkkim2@naver.com</a></li>
+                    <li>Instagram：<a href="https://www.instagram.com/fairy.daybook/">@fairy.daybook</a></li>
+                </ul>
+
+                <h2>7. ポリシーの変更</h2>
+                <p>本プライバシーポリシーは予告なく変更される場合があります。重要な変更時はアプリ内でお知らせします。</p>
+
+                <div class="highlight">
+                    <strong>logboni</strong>
+                    プライバシーを最優先に考えています。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="marketing.html">홈으로</a>
+            <a href="https://www.instagram.com/fairy.daybook/">Instagram</a>
+            <a href="mailto:kbkkim2@naver.com">문의하기</a>
+        </div>
+        <div class="footer-bottom">
+            © 2025 logboni. All rights reserved.
+        </div>
+    </footer>
+
     <script>
         function setLanguage(lang) {
             document.getElementById('ko-content').classList.add('hidden');
             document.getElementById('en-content').classList.add('hidden');
             document.getElementById('ja-content').classList.add('hidden');
             document.getElementById(lang + '-content').classList.remove('hidden');
-            
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
+
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
-            
-            localStorage.setItem('language', lang);
+
+            document.body.classList.remove('ja');
+            if (lang === 'ja') document.body.classList.add('ja');
+
+            localStorage.setItem('fairy-lang', lang);
         }
-        
-        window.addEventListener('load', function() {
-            const savedLang = localStorage.getItem('language') || 'ko';
-            const buttons = document.querySelectorAll('.lang-btn');
-            buttons.forEach(btn => {
-                if (btn.textContent === '한글' && savedLang === 'ko') {
-                    btn.click();
-                } else if (btn.textContent === 'English' && savedLang === 'en') {
-                    btn.click();
-                } else if (btn.textContent === '日本語' && savedLang === 'ja') {
+
+        window.addEventListener('load', () => {
+            const savedLang = localStorage.getItem('fairy-lang') || 'ko';
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if ((btn.textContent === '한국어' && savedLang === 'ko') ||
+                    (btn.textContent === 'EN' && savedLang === 'en') ||
+                    (btn.textContent === '日本語' && savedLang === 'ja')) {
                     btn.click();
                 }
             });
