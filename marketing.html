@@ -323,6 +323,16 @@
             box-shadow: 0 0 40px rgba(255, 149, 0, 0.3);
         }
 
+        .gallery-item img {
+            transition: all 0.3s ease;
+            filter: brightness(0.9);
+        }
+
+        .gallery-item:hover img {
+            filter: brightness(1.1);
+            transform: scale(1.02);
+        }
+
         /* Privacy Section */
         .privacy-section { padding: 100px 0; background: white; }
 
@@ -589,11 +599,21 @@
                 <p data-i18n="galleryDesc">AI가 그린 그림을 전시하고, 다른 사용자들과 공유하세요</p>
             </div>
             <div class="gallery-preview">
-                <div class="gallery-item">🌅</div>
-                <div class="gallery-item">🏔️</div>
-                <div class="gallery-item">🌸</div>
-                <div class="gallery-item">🌊</div>
-                <div class="gallery-item">🌙</div>
+                <div class="gallery-item">
+                    <img src="images/gallery/exhibition_01.jpg" alt="전시회 작품 1" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery/exhibition_02.jpg" alt="전시회 작품 2" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery/exhibition_03.jpg" alt="전시회 작품 3" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery/exhibition_04.jpg" alt="전시회 작품 4" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery/exhibition_05.jpg" alt="전시회 작품 5" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
+                </div>
             </div>
         </div>
     </section>
